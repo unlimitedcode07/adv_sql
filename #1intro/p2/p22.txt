@@ -1,0 +1,6 @@
+what is dbms and server sql ?
+=> dbms is software that manage database
+
+Sql => is lang to talk to db
+
+server => its a physical mechine where db lives

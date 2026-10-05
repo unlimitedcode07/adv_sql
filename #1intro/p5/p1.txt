@@ -1,0 +1,35 @@
+lets say we have database abd this database is empty so we have nothing inside it 
+now ofcourse first think you have to do is write sql with commmand create  
+in order to create brand new table in the databsae once you but this table 
+is empty there nothing inside it so now what we are done hear is , we define 
+something new and this type of commend is [data defination lang ]  
+
+
+ddl => Data defination Language=>
+              |
+        /     |     \
+   Create    Alter   Drop
+      |       |       |
+      |       |        --> to delete something for eg table
+      |       --> to edit something that already Exist
+      --> create something new 
+
+we need data lets say we have website or application ,now this application generate lots of data 
+for this application to move data inside our new table it must use sql commend insert so we can add new data
+this type of command we called data Manipulation Language
+ dml => Data Manipulation Language=>
+              |
+        /     |     \
+   Insert    Update   delete
+      |       |       |
+      |       |        --> delete data from table; 
+      |       --> to update something that already Exist
+      --> insert new data 
+
+ so now we have data so we can ask questions and for that we write sql query and inside that command 
+ we write select thats the Data Query Language
+
+ DQl => Data Query Language
+        |
+      select
+        -->  we use in order to query our data   

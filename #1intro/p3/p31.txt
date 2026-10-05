@@ -1,0 +1,24 @@
+Type of db
+
+Relational database => its speradsheet call them table where we have column and rows and there is like relationship between those table 
+                       to discribe how they related to each other and thas why we called it relational database
+                       =>eg:~ MySql , PostgreSql, microSoft Sql server
+       /\
+       ||
+// => upper is sql db 
+// => below is No-Sql
+        ||
+        \/
+
+Key-Value database =>   you have pairs of key and value ,  think like you have big dictionary where you have a word like the key and the defination of the word this is the value 
+                        =>eg:~ Redis , Amazon DynamoDb
+
+Column- based =>        instade of grouping tht data by rows this type of database group the data into columns thats why its called column based
+                        its advance databse in order to handle large ammount of data
+                        =>eg:~ Apache Cassandra, Amazon RedShift
+
+graph-database  => the main fous is the relationship between objects so the main idea hear is how to connect my data points 
+                =>eg:~ Neo4j
+
+docment database => data is stored as entire documents where the structure of data is not that important what imp is to fit everythink in one page in one document 
+                 =>eg:~ MongoDb

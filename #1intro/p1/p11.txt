@@ -1,0 +1,16 @@
+What is sql?
+
+
+what is data?
+=>every think generat data and data is everywere.
+=>Your first name is data , your mobile and everythink inside it is data.
+
+we usualy store data in speradsheet,file,txt.file;
+but what about company they generat lots of data;
+
+what is DataBase?
+=>database is continair for storing data but instade of just dumping files into folder, 
+  database organized the data so that its easy to access and to manage and to search;
+
+how to talk to database?
+=>we use sql
