@@ -1,0 +1,69 @@
+dml// data manipulation lang
+
+// insert  => insert can add new rows in the table 
+
+syntex of insert
+
+______________________________________________________________________________________________________________________
+                            OPTIONAL => if no column are specified sql expects values for all columns                 |
+                                    ||
+                                    \/
+INSERT INTO table_name ( COLUMN1,COLUMN2,COLUMN3,...)
+VALUES (VALUE1,VALUE2,VALUE3,..)
+                /\
+                ||
+            compulsary
+______________________________________________________________________________________________________________________|            
+// match the number of columns and values   
+____________________________________________________________________________________________________________________________
+
+____________________________________
+|                                   |
+| insert into customers
+| values (6,'kp','india',null),
+| (7,'om',null,null);
+|___________________________________|
+
+rule learn from this insert 
+
+1st
+// as we asign primary key to id so we can asign same id to id like thsi 
+(6,'kp','india',null),
+(6,'om',null,null);
+
+2nd
+(6,"kp","india",null), in the name we use double quote
+(7,'om',null,null);    in the name we use single quote
+only single quate is allowed , double quote gives error
+
+3rd
+(6,'kp','india',null),
+(7,'om',null);  ->   if we dont want or know the val of country 
+we cant just left the column it gives error so put null like thsi 
+(7,'om',null,null);
+as remember the rule => match the number of columns and values 
+
+4th 
+(6,'kp','india',null) this is ok 
+('kp',6,'india',null) this si not ok 
+column and values must be in thse same order 
+// it can gives error or 
+else fit into wrong column
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+table after insert
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              NULL
+7           om                                                 NULL                                               NULL
+
+(7 rows affected)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////

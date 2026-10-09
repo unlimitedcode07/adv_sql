@@ -1,0 +1,67 @@
+[Having clause] =>filter data after aggrigation;
+                  can be used obly after group by;
+
+
+q=> total score by country having total sum greater than 800;
+_______________________________
+|                             |
+| select country,sum(score)
+| from customers
+| group by country
+| having sum(score)>800;
+|____________________________|
+// reference img4;
+
+country                                            
+-------------------------------------------------- -----------
+Germany                                            850
+USA                                                900
+
+(2 rows affected)
+// execution detail
+with the group by we are using the country column where we are grouping the data by its value 
+but with the having we are using the aggregate column the sum off the score
+
+
+q=> if we have where why use having => there is different ways to filter and this both are one of them
+so lets use where ,
+usualy where comes befor group by 
+
+modified q => q=> total score by country filter by country where score is greater than 400,and having total sum greater than 800;
+_______________________________
+|                             |
+| select country,sum(score)
+| from customers
+| where score>400
+| group by country
+| having sum(score)>800;
+|____________________________| 
+
+country                                            
+-------------------------------------------------- -----------
+USA                                                900
+
+(1 row affected)
+
+// execution detail img5.img6
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+q=> find the averagescore for each country    <-- pure agricate
+    consider only coustomer with a score not equal to zero   <- this is we can use where
+    and return only those country with an average score greater then 430 <- and this is where we can use having
+______________________________
+|                             |
+| select country,avg(score)
+| from customers
+| where score != 0
+| group by country
+| having avg(score)>430;
+|____________________________|
+
+country                                            
+-------------------------------------------------- -----------
+UK                                                 750
+USA                                                900
+
+(2 rows affected)

@@ -1,0 +1,115 @@
+[where] clause => to filter the data; 
+//reference img2
+
+// coustomer table
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+
+(5 rows affected)
+
+
+select coustomer where score not equal to zero
+____________________________________
+|
+|  SELECT * 
+|  FROM CUSTOMERS
+|  where score != 0;
+|___________________________________
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+
+
+
+
+
+coustomer from garmany
+_________________________________
+|                               |
+| SELECT * 
+| FROM CUSTOMERS
+| where country = 'Germany';
+|_______________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+4           Martin                                             Germany                                            500
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[order by ] clause => sort your data; eather asc [low to high]=> accending or desc [high to low]=> decending // and if you dont specify default is asc
+
+// reference img3
+
+retrive all coustomer and sort the result by higest  first then low;
+____________________________________
+|
+|  SELECT * 
+|  FROM CUSTOMERS
+|  order by score desc;
+|___________________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+1           Maria                                              Germany                                            350
+5           Peter                                              USA                                                0
+
+(5 rows affected)
+
+retrive all coustomer and sort the result by lowest first then high;
+____________________________________
+|
+|  SELECT * 
+|  FROM CUSTOMERS
+|  order by score asc;
+|___________________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+5           Peter                                              USA                                                0
+1           Maria                                              Germany                                            350
+4           Martin                                             Germany                                            500
+3           Georg                                              UK                                                 750
+2           John                                               USA                                                900
+
+(5 rows affected)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// nested order by
+sort the result by country and then by higest score;
+// first contry sort by alphabeticaly then sort by score ;
+____________________________________
+|                                   |
+|  SELECT * 
+|  FROM CUSTOMERS
+|  order by country asc, score desc;
+|_____________________________________|
+
+
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+4           Martin                                             Germany                                            500
+1           Maria                                              Germany                                            350
+3           Georg                                              UK                                                 750
+2           John                                               USA                                                900
+5           Peter                                              USA                                                0
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

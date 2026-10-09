@@ -1,0 +1,65 @@
+dql
+[select]
+
+clause  => from -> tell sql where to find your data
+           select *(all)-> retrive all column
+
+
+[ comments ]
+-- this is comment      => this is single line comment;
+/*
+this is also 
+comment*/      => this si multy line comment;   
+
+
+
+
+///////////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+TASK => RETRIVE ALL COUSTOMER DATA;
+______________________________
+|                             |
+|   SELECT * FROM CUSTOMERS;
+|_____________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+
+_____________________________
+|                            |
+|  select * from orders;
+|____________________________|
+
+order_id    customer_id order_date sales
+----------- ----------- ---------- -----------
+1001        1           2021-01-11 35
+1002        2           2021-04-05 15
+1003        3           2021-06-18 20
+1004        6           2021-08-31 10
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+select specific column {only column that need}
+
+select only name and country from coustomer
+_________________________________________________
+|                                               |
+|  SELECT first_name, country FROM CUSTOMERS;
+|_______________________________________________|
+
+first_name                                         country
+-------------------------------------------------- --------------------------------------------------
+Maria                                              Germany
+John                                               USA
+Georg                                              UK
+Martin                                             Germany
+Peter                                              USA
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

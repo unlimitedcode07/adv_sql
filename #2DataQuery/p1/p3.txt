@@ -1,0 +1,95 @@
+// group by  => aggrigate the data; it combine the row with the same value;
+
+q=> find the total score for each country;
+
+____________________________
+| select                   |
+| country, sum(score)
+| from customers
+| group by country; 
+|__________________________|
+
+// hear country is what we want to gropu by we only write that then sum it sum score my murging same country in group by;
+
+country                                            
+-------------------------------------------------- -----------
+Germany                                            850
+UK                                                 750
+USA                                                900
+
+(3 rows affected)
+_______________________________________
+|                                     |
+| select 
+| country, sum(score) as total_score
+| from customers
+| group by country; 
+|_____________________________________|
+
+we can write column name if not exist using as ;   ---
+                                                     ||
+                                                     \/
+
+country                                            total_score
+-------------------------------------------------- -----------
+Germany                                            850
+UK                                                 750
+USA                                                900
+
+(3 rows affected)
+
+
+
+// rules of group by 
+1st => all column in the select eather must me aggrigate eg(sum(aggrigation )  like we do sum(score))or include in the group byeg(like we do for country);
+
+leke hear
+_________________________________________________ 
+|
+| select 
+| country, first_name,sum(score) as total_score
+| from customers
+| group by country; 
+|_______________________________________________|
+
+Msg 8120, Level 16, State 1, Line 2
+Column 'customers.first_name' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+
+hear first name is in table but not in group by so it get error;
+
+
+to solve this and get rule 1 we do this  add the first name and group by 
+
+_________________________________________________ 
+|
+| select 
+| country, first_name,sum(score) as total_score
+| from customers
+| group by country, first_name; 
+|_______________________________________________|
+
+country                                            first_name                                         total_score
+-------------------------------------------------- -------------------------------------------------- -----------
+UK                                                 Georg                                              750
+USA                                                John                                               900
+Germany                                            Maria                                              350
+Germany                                            Martin                                             500
+USA                                                Peter                                              0
+
+(5 rows affected)
+
+it generate 5 rows thats clear that the rule 2 as well 
+it said => result of group by determine by the unique values of the grouped column;
+
+
+// q => find the total score and total coustomer for each country
+______________________________________
+|                                     |
+| select 
+| country,sum(score) as total_score,
+| count (country) as total_country_p
+| from customers
+| group by country ; 
+|___________________________________|
+
+we use count to sum the common;

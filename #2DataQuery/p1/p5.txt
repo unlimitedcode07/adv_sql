@@ -1,0 +1,93 @@
+DISTINCT => REMOVE DUPLICATE each value apper only once
+
+q=> return unique list of all country;
+________________________________
+|                              |
+| select distinct country
+| from customers
+|____________________________|
+
+country
+------------
+Germany
+UK
+USA
+
+// it remove dublicate value in column // reference img7
+
+
+///////////////////////////////////////////////////////////////////////////
+
+top  => limit your data; restrict the num of rows and return
+
+q => retrive only 3 coustomer;
+_________________________
+|                    |
+| select top 3 *
+| from customers
+|____________________|
+
+id    first_name        country       score
+----- ------------- --------------- -----------
+1      Maria            Germany        350
+2      John             USA            900
+3      Georg            UK             750
+
+// execution detail => img8
+
+//////////////////////////////////////////////
+
+retrive top 3 coustomer with high score;
+__________________________
+|                        |
+| select top 3 *
+| from customers
+| order by score desc
+|________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+retrive lowest 2 coustomer based on score
+________________________
+|                      |
+| select top 2 * 
+| from customers
+| order by score asc
+|_____________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+5           Peter                                              USA                                                0
+1           Maria                                              Germany                                            350
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+order table 
+order_id    customer_id order_date sales
+----------- ----------- ---------- -----------
+1001        1           2021-01-11 35
+1002        2           2021-04-05 15
+1003        3           2021-06-18 20
+1004        6           2021-08-31 10
+
+ q => two most recent orders;
+__________________________
+|                         |
+| select top 2 * 
+| from orders
+| order by order_date desc;
+|_____________________________|
+
+order_id    customer_id order_date sales
+----------- ----------- ---------- -----------
+1004        6           2021-08-31 10
+1003        3           2021-06-18 20
+
+///////////////////////////////////////////////////////////
+
+1.23.38

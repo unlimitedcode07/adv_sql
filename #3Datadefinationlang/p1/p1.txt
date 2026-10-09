@@ -1,0 +1,68 @@
+q1 => create new table called persons with column: id,person_name,birth_date,and phone
+
+______________________________________________
+create table person(                          |
+ id int not null,
+ person_name varchar(50) not null,
+ birth_date date,
+ phone_num varchar(12) not null,
+ Constraint pk_person primary key (id)
+)
+_______________________________________________|
+______________________________________________________________________________________________
+   id                         person_name                      birth_date     phone_num       |
+----------- -------------------------------------------------- ----------   ------------
+
+right now its empty 
+______________________________________________________________________________________________|
+hear 
+we have format that 
+table_name | data_type | Constraint
+    id     |    int    |  not null
+
+Constraint pk_person primary key (id)  
+we want this data to be unique so thats whay we add primary key so that 
+no rows copy it id also we can use it to attach table {future topic}  
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// alter => we can edit column change datatype change defination of table etc
+
+q => add new column email to the persons table;
+
+_______________________________________________
+alter table person                            |
+add email varchar(50) not null;
+______________________________________________|
+
+id     person_name    birth_date   phone_num    email     
+---- ---------------- ---------- ------------ ---------
+
+/// added column always add at the end by default
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+drop 
+Remove the column phone from the persons table
+
+_____________________________
+alter table person
+drop column phone_num 
+_______________________________
+
+// we dont have to specify the datatype and constraint cause db already knows
+
+id     person_name    birth_date    email     
+---- ---------------- ----------  ---------
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+delete the table person from the database
+
+__________________________
+drop table person;
+___________________________
+
+thats it the whole table will delete 
