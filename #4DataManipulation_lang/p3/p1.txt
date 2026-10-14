@@ -1,0 +1,85 @@
+delete
+//
+remove rows from table;
+
+syntex <DELETE>
+___________________________
+|                          |
+| DELETE FROM table-name
+| WHERE <CONDITION>
+|__________________________|
+
+ALWAYS USE WHERE TO AVOID DELETING ALL ROWS UNINTENTIONALLY
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//before => select * from customers;
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              0
+7           om                                                 NULL                                               0
+8           pashy                                              india                                              540
+9           ayush                                              uk                                                 0
+
+__________________________
+|                         |
+| delete from customer
+| where id>6
+|_________________________|
+
+//after => select * from customers;
+
+
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              0
+7           om                                                 NULL                                               0
+
+(7 rows affected)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+delete alll data from person table;{only data not table}
+____________________________
+|                          |  this si slower 
+| delete from person;
+|__________________________| both have same
+|                          | effect
+| truncate table persons
+|__________________________| but this is faster 
+
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+
+(0 rows affected)
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+truncate vs delete 
+
+/////////////////////////////////////////
+
+
+
+
+
+
+
+
+

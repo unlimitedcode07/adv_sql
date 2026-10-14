@@ -1,4 +1,5 @@
 dml// data manipulation lang
+// modify your data 
 
 // insert  => insert can add new rows in the table 
 
@@ -67,3 +68,154 @@ id          first_name                                         country          
 (7 rows affected)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+5th 
+// we can write that optional column name
+
+insert into customers (id , first_name,country,score)
+values (8,'pashy','india',540);
+
+it can give same result as we did without column 
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              NULL
+7           om                                                 NULL                                               NULL
+8           pashy                                              india                                              540
+
+
+
+6th
+but if we reduce the column 
+_____________________________________________________________________
+|                                                                    |
+| insert into customers (id , first_name,score)
+| values (9,'ayush',178);
+|____________________________________________________________________|
+
+it still runs!
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              NULL
+7           om                                                 NULL                                               NULL
+8           pashy                                              india                                              540
+9           ayush                                              NULL                                               178
+
+// ayush added but what we left "country become null "
+
+rule is => column not included in insert become null (unless a default or constraint exist)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// insert using select
+
+upper first method was to insert data into target table as we do manualy 
+
+next also insert data but using another table // reference table // img3 then img2
+
+so we have thsi 
+=> already existing table without data 
+=> and source table that we are going to insert data from that table  
+=> we want to insert source table data into empty table (existing table)
+
+what to do 
+=>we can take data from the source table and insert it into target table without
+  manaualy writing the script  so we are moving the data from one table to another 
+
+=> we need two step 
+1st => we have to write the sql query using select from {in order to select the data }
+2nd => we can take this result and use an insert command in order to insert this result into target table 
+
+thats it 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+q => copy data from "customers" table into "persons"
+   ___________
+  /           |
+ / query1demo /
+ |___________/
+________________________________________________________
+|                                                      |
+| select id,first_name,null,'unknow' from customers
+|______________________________________________________|
+
+id          first_name                                                     
+----------- -------------------------------------------------- ----------- ------
+1           Maria                                              NULL        unknow
+2           John                                               NULL        unknow
+3           Georg                                              NULL        unknow
+4           Martin                                             NULL        unknow
+5           Peter                                              NULL        unknow
+6           kp                                                 NULL        unknow
+7           om                                                 NULL        unknow
+8           pashy                                              NULL        unknow
+9           ayush                                              NULL        unknow
+
+(9 rows affected)
+
+so id and first name printed from customer and rest as it dont exist it printed as we initeted in query
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+____________________________
+|                         |
+| select * from person       person datatype and constraint in img2
+|________________________|
+
+id          person_name                                        birth_date phone_num
+----------- -------------------------------------------------- ---------- ------------
+
+(0 rows affected)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   ___________
+  /           |
+ / query2demo /
+ |___________/
+
+ so 
+ after this 
+
+_______________________________________________________________
+|                                                              |
+| insert into person 
+| select id,first_name,null,'unknow' from customers
+|
+|                     OR THIS 
+|
+| insert into person (id ,person_name,birth_date,phone_num)
+| select id,first_name,null,'unknow' from customers
+|_____________________________________________________________|
+
+and after that we see this after executing this query {select * from person}
+
+id          person_name                                        birth_date phone_num
+----------- -------------------------------------------------- ---------- ------------
+1           Maria                                              NULL       unknow
+2           John                                               NULL       unknow
+3           Georg                                              NULL       unknow
+4           Martin                                             NULL       unknow
+5           Peter                                              NULL       unknow
+6           kp                                                 NULL       unknow
+7           om                                                 NULL       unknow
+8           pashy                                              NULL       unknow
+9           ayush                                              NULL       unknow
+
+(9 rows affected)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

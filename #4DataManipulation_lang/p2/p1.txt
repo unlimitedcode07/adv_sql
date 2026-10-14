@@ -1,0 +1,84 @@
+// UPDATE
+if i would like to change the content of already existing rows
+we can use command update in order to change the content of already existing rows 
+insert is conpletly new rows but update going to go and change the data of already existing rows 
+
+// syntex => update 
+_______________________
+|                      |
+| UPDATE table_name
+| SET column1 = val1, 
+    column2 = val2
+| where <condition> 
+|_____________________|
+
+NOTE => ALWAYS USE WHERE TO AVOID UPDATING ALL ROWS UNINTENTIONALLY
+
+///////////////////////////////////////////////////////////////////////////////////
+
+q => change the score of customer with id 7 to 0
+
+___________
+| before  |
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+7           om                                                 NULL                                               NULL
+
+(1 row affected)
+
+_____________________
+|                   |
+| update customers
+| set score = 0
+| where id = 7
+|___________________|
+
+_________
+| after |
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+7           om                                                 NULL                                               0
+
+(1 row affected)
+
+/////////////////////////////////////////////////////////////////////
+
+q => change the score of customer with id 10 to 0  and country as uk
+
+___________
+| before  |
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+9           ayush                                              NULL                                               178
+
+________________________
+|                      |
+| update customers
+| set score = 0,
+|    country = 'uk'
+| where id = 9
+|_____________________|
+
+_________
+| after |
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+9           ayush                                              uk                                                 0
+
+(1 row affected)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+q => update all customer with a null score by setting there score to 0
+_______________________
+|                      |
+| update customers
+| set score = 0
+| where score is null
+|______________________|
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

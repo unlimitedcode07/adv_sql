@@ -1,0 +1,34 @@
+operator
+
+// Comparison Operator
+   = ,<>, =!, > ,< ,<=, >= 
+   its use to compare two values/thinks
+
+// Logical operator
+   AND ,OR ,NOT 
+   we use it in combine multipal operator  
+
+// Range operator
+   BETWEEN
+   We use it in order to check whether a value falls withen a specific range  
+
+// Membership operator
+   IN , NOT IN       
+
+// Search operator
+   LIKE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

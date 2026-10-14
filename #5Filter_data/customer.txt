@@ -1,0 +1,15 @@
+this is our customers table that we can do operation 
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              0
+7           om                                                 NULL                                               0
+8           pashy                                              india                                              540
+9           ayush                                              uk                                                 0
+
+(9 rows affected)

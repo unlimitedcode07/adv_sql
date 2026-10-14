@@ -1,0 +1,28 @@
+// BETWEEN => check if value is withen a range
+
+regerence img1
+
+retrive all customers whose score falls in the rang between 100 and 500
+______________________________________
+|                                    |
+| select * 
+| from customers
+| where score BETWEEN 100 AND 500;
+|____________________________________|
+
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+4           Martin                                             Germany                                            500
+
+
+
+
+
+
+
+
+
+
+

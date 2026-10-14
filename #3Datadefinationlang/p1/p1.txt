@@ -1,7 +1,8 @@
 q1 => create new table called persons with column: id,person_name,birth_date,and phone
 
 ______________________________________________
-create table person(                          |
+|                                            |
+create table person(                          
  id int not null,
  person_name varchar(50) not null,
  birth_date date,

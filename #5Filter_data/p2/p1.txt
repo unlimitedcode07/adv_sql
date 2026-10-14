@@ -1,0 +1,9 @@
+Comparison operator 
+
+// it simple it compare two thinks
+
+formula for that can be always like this 
+    _____________  ___________   _____________
+   / EXPRESSION / / operator /  / EXPRESSION /  
+
+// rest see from img1

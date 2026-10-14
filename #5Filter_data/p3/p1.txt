@@ -1,0 +1,59 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+retrieve all customers from Germany.
+_______________________________
+|                             |
+| select * from customers
+| where country =  'Germany'
+|_____________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+4           Martin                                             Germany                                            500
+
+(2 rows affected)
+///////////////////////////////////////////////////////////
+
+retrieve all customers from that are not from Germany.
+__________________________________
+|                                |
+| select * from customers
+| where country <> 'Germany'
+>                                   both are correct
+| select * from customers
+| where country != 'Germany'
+|______________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+5           Peter                                              USA                                                0
+6           kp                                                 india                                              0
+8           pashy                                              india                                              540
+9           ayush                                              uk                                                 0
+
+(6 rows affected)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+retrive all customer with a score greater than 500;
+
+_______________________________
+| select * from customers
+| where score > 500
+|______________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+8           pashy                                              india                                              540
+
+(3 rows affected)

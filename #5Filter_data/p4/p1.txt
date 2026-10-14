@@ -1,0 +1,82 @@
+logical operator 
+// it use whewn you have multipal condition 
+
+// [and]all condition must be true
+
+q=> write quory where country is usa and score greater than 500;
+
+reference img1
+__________________________________________
+|                                         |
+| select * from customers
+| where country = 'USA' and  score > 500
+|________________________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+2           John                                               USA                                                900
+
+(1 row affected)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+[or] at least one condition is true
+q=> write quory where country is usa or have score greater than 500;
+
+reference img2
+__________________________________________
+|                                         |
+| select * from customers
+| where country = 'USA' or score > 500
+|________________________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+2           John                                               USA                                                900
+3           Georg                                              UK                                                 750
+5           Peter                                              USA                                                0
+8           pashy                                              india                                              540
+
+(4 rows affected)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[not] (reverse) excludes matching values
+
+q=>retrive all customer except country usa
+
+reference img3
+_______________________________
+|                            |
+| select * from customers
+| where NOT country = 'USA'
+|____________________________|
+
+id          first_name                                         country                                            score
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+1           Maria                                              Germany                                            350
+3           Georg                                              UK                                                 750
+4           Martin                                             Germany                                            500
+6           kp                                                 india                                              0
+8           pashy                                              india                                              540
+9           ayush                                              uk                                                 0
+
+(6 rows affected)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
